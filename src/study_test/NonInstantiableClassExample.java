@@ -17,7 +17,7 @@ public class NonInstantiableClassExample {
     }
 }
 
-class NonInstantiableClass {
+final class NonInstantiableClass {
 
     // Ensuring non-instantiability.
     private NonInstantiableClass() {
