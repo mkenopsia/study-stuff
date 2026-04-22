@@ -1,7 +1,6 @@
 package multithreading;
 
 import java.security.SecureRandom;
-import java.util.concurrent.ThreadLocalRandom;
 
 public final class ThreadUtil {
 
@@ -43,6 +42,14 @@ public final class ThreadUtil {
         long time = RANDOM.nextLong(lowerBound, upperBound);
         try {
             Thread.sleep(time);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public static void sleep(final int timeToSleep) {
+        try {
+            Thread.sleep(timeToSleep);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
